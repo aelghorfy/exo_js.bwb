@@ -1,5 +1,5 @@
 // constante
-let monCanard ="Donald";
+/* let monCanard ="Donald";
 const nombreDePattes=2;
 const nombreDAiles=2;
 // variable
@@ -8,7 +8,7 @@ let maCanette="Daisy";
 let mesCanards=maCanette+=monCanard;
 return nombreDePattes+nombreDAiles;
 }
-console.log(canard(nombreDePattes,nombreDAiles))
+console.log(canard(nombreDePattes,nombreDAiles)) */
 
 let x=1;
 function f(){
