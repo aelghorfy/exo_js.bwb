@@ -64,8 +64,14 @@ for (let i=0;i<nbplaque;i++)
     stockplaque.push(plaque);
 
 console.log(stockplaque) */
+
+
+
+
+
+
   
-document.getElementById('insuranceForm').addEventListener('submit', function(event) {
+/* document.getElementById('insuranceForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     // Get the values from the form inputs
@@ -121,4 +127,32 @@ function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
     }
 
     return tarif; 
+}
+ */
+
+document.getElementById('PrixPhotocopie').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    let copie = parseInt(document.getElementById('copie').value);
+
+    let tarif = calculate(copie, dizaine, vingtaine, audela);
+
+    document.getElementById('result').textContent = "Le montant s'élève à " + tarif + '€';
+})
+
+const dizaine = 0.10;
+const vingtaine = 0.09;
+const audela = 0.08;
+
+function calculate(copie, dizaine, vingtaine, audela) {
+    let totalprix = 0;
+    if (copie <= 10) {
+        totalprix = copie * dizaine;
+    } else if (copie > 10 && copie <= 20) {
+        totalprix = 10 * dizaine + (copie - 10) * vingtaine;
+    } else if (copie > 20) {
+        totalprix = 10 * dizaine + 10 * vingtaine + (copie - 20) * audela;
+    }
+    totalprix = Math.round(totalprix*100)/100;
+    return totalprix;
 }
