@@ -150,13 +150,13 @@ function calculate(copie, dizaine, vingtaine, audela) {
         totalprix = copie * dizaine;
     } else if (copie > 10 && copie <= 20) {
         totalprix = 10 * dizaine + (copie - 10) * vingtaine;
-    } else if (copie > 20) {
+    } else if (copie > 30) {
         totalprix = 10 * dizaine + 10 * vingtaine + (copie - 20) * audela;
     }
     totalprix = Math.round(totalprix*100)/100;
     return totalprix;
 } */
-    function pyramid(n) {
+    /* function pyramid(n) {
 
         for(let i=n; i>= 0; i--){
       
@@ -171,7 +171,17 @@ function calculate(copie, dizaine, vingtaine, audela) {
       
 
 let n = window.prompt("Nombre d'etages");
-pyramid(n);
+pyramid(n); */
 
+function pyramid(n) {
+    for(let i=0; i<=n; i++){
+        let star2 = '*'.repeat(i)
+
+        console.log(star2);
+    }
+}
+
+let n = window.prompt("Nombre d'etages");
+pyramid(n);
       
     
