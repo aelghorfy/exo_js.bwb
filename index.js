@@ -19,11 +19,11 @@ console.log(x);
 console.log(x);
 f();*/
 
-const lettres="ABCDEFGHJKLMNPQRSTUVWXYZ";
+/* const lettres="ABCDEFGHJKLMNPQRSTUVWXYZ";
 const nombres="0123456789";
 
 
-let nbplaque=prompt("jsp");
+
 let stockplaque=[];
 
 function generateLetter(){
@@ -56,7 +56,7 @@ function genererPlaques(){
 
 }
 
-genererPlaques();
+genererPlaques(); */
 
 /* let plaque = generateLetter() + generateNumber() + generateLetter ();
 
@@ -64,3 +64,61 @@ for (let i=0;i<nbplaque;i++)
     stockplaque.push(plaque);
 
 console.log(stockplaque) */
+  
+document.getElementById('insuranceForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    // Get the values from the form inputs
+    let age = parseInt(document.getElementById('age').value);              
+    let anneesPermis = parseInt(document.getElementById('licenceYears').value);       
+    let accident = parseInt(document.getElementById('accident').value);     
+    let anneesAssure = parseInt(document.getElementById('insuredYears').value);
+
+    // Call the function to calculate the insurance tariff
+    let tarif = proposerTarifAssurance(age, anneesPermis, accident, anneesAssure);
+
+    // Display the result
+    document.getElementById('result').textContent = 'Vous bénéficierez du ' + tarif + '!';
+});
+
+function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
+    let tarif = "";
+
+    // Logic for calculating the tariff based on the inputs
+    if (age < 25 && anneesPermis < 2) {
+        tarif = "Tarif D";
+    } else if (age > 25 || anneesPermis < 2) {
+        tarif = "Tarif C";
+    } else if (age >= 25 && anneesPermis >= 2) {
+        tarif = "Tarif B";
+    }
+//If the client have one accident, he get downgraded, if more he get refused
+    if (accident > 1) {
+        if (tarif === "Tarif D") {
+            tarif = "Tarif Refusé";
+        } else if (tarif === "Tarif C") {
+            tarif = "Tarif D";
+        } else if (tarif === "Tarif B") {
+            tarif = "Tarif C";
+        }
+         } else if (tarif === "Tarif B") {
+            tarif = "Tarif C";
+    }
+
+    if (accident > 2) {
+        tarif = "Refusé"
+    }
+
+//If the client have insurence for more or equal a year, his programm get upgrated 
+    if (anneesAssure >= 1 ) {
+        if (tarif === "Tarif D") {
+            tarif = "Tarif C";
+        } else if (tarif === "Tarif C") {
+            tarif = "Tarif B";
+        } else if (tarif === "Tarif B") {
+            tarif = "Tarif A";
+        }
+    }
+
+    return tarif; 
+}

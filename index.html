@@ -1,16 +1,33 @@
 <!DOCTYPE html>
-
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>titre</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Calcul de Tarif Assurance</title>
+    <meta name="description" content="Formulaire pour calculer le tarif d'assurance">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Formulaire de Calcul de Tarif d'Assurance</h1>
+    <form id="insuranceForm">
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age" required><br><br>
  
-        <script src="index.js" async defer></script>
-    </body>
+        <label for="licenceYears">Années avec le permis :</label>
+        <input type="number" id="licenceYears" name="licenceYears" required><br><br>
+ 
+        <label for="accident">Combien avez-vous eu d'accidents :</label>
+        <input type="number" id="accident" name="accident" required><br><br>
+ 
+        <label for="insuredYears">Années assuré :</label>
+        <input type="number" id="insuredYears" name="insuredYears" required><br><br>
+ 
+        <input type="submit" value="Calculer Tarif">
+    </form>
+
+    <p id="result"></p>
+
+    <!-- Link to external JavaScript file -->
+    <script src="index.js"></script>
+</body>
 </html>
