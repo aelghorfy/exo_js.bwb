@@ -130,7 +130,7 @@ function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
 }
  */
 
-document.getElementById('PrixPhotocopie').addEventListener('submit', function(event) {
+/* document.getElementById('PrixPhotocopie').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
     let copie = parseInt(document.getElementById('copie').value);
@@ -155,4 +155,23 @@ function calculate(copie, dizaine, vingtaine, audela) {
     }
     totalprix = Math.round(totalprix*100)/100;
     return totalprix;
-}
+} */
+    function pyramid(n) {
+
+        for(let i=n; i>= 0; i--){
+      
+          let star2 = '*'. repeat(i)
+
+       
+          console.log(star2);
+      
+        }
+  
+      }
+      
+
+let n = window.prompt("Nombre d'etages");
+pyramid(n);
+
+      
+    
