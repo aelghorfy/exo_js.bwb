@@ -156,6 +156,40 @@ function calculate(copie, dizaine, vingtaine, audela) {
     totalprix = Math.round(totalprix*100)/100;
     return totalprix;
 } */
+
+    function estImposable() {
+
+        let civilité = window.prompt("Veuillez entrer votre civilité (homme ou femme):").toLowerCase();
+    
+        let age = parseInt(window.prompt("Veuillez entrer votre âge:"));
+    
+        if (civilité === 'homme') {
+            if (age > 18) {
+                alert("Imposable");
+            } else {
+                alert("Non imposable");
+            }
+        } else if (civilité === 'femme') {
+            if (age >= 18 && age <= 35) {
+                alert("Imposable");
+            } else {
+                alert("Non imposable");
+            }
+        } else {
+            alert("Non imposable");
+        }
+    }
+    estImposable();
+    
+
+
+
+
+
+
+
+
+
     /* function pyramid(n) {
 
         for(let i=n; i>= 0; i--){
@@ -173,7 +207,7 @@ function calculate(copie, dizaine, vingtaine, audela) {
 let n = window.prompt("Nombre d'etages");
 pyramid(n); */
 
-function pyramid(n) {
+/* function pyramid(n) {
     for(let i=0; i<=n; i++){
         let star2 = '*'.repeat(i)
 
@@ -182,6 +216,8 @@ function pyramid(n) {
 }
 
 let n = window.prompt("Nombre d'etages");
-pyramid(n);
+pyramid(n); */
+
+
       
     
