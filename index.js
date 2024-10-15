@@ -157,7 +157,7 @@ function calculate(copie, dizaine, vingtaine, audela) {
     return totalprix;
 } */
 
-    function estImposable() {
+    /* function estImposable() {
 
         let civilité = window.prompt("Veuillez entrer votre civilité (homme ou femme):").toLowerCase();
     
@@ -179,7 +179,7 @@ function calculate(copie, dizaine, vingtaine, audela) {
             alert("Non imposable");
         }
     }
-    estImposable();
+    estImposable(); */
     
 
 
@@ -220,4 +220,24 @@ pyramid(n); */
 
 
       
-    
+function trieBulleinverse(arr) {
+    let n = arr.length;
+    let swapped;
+
+    do {
+        swapped = false;
+
+        for (let i= n - 1; i > 0; i--) {
+            if (arr[i] < arr[i - 1]) {
+
+                [arr[i], arr[i - 1]] = [arr[i - 1], arr[i]];
+                swapped = true;
+            }
+        }
+    } while (swapped);
+
+    return arr;
+}
+
+let arr = [64, 34, 25, 12, 22, 11, 90];
+console.log(trieBulleinverse(arr));
