@@ -243,7 +243,7 @@ let arr = [64, 34, 25, 12, 22, 11, 90];
 console.log(trieBulleinverse(arr)); */
 
 
-function estPalindrome(mot) {
+/* function estPalindrome(mot) {
     mot = mot.toLowerCase()
 
     let motInverse = mot.split('').reverse().join('');
@@ -256,4 +256,17 @@ if (estPalindrome(motUtilisateur)) {
     console.log("true");
 } else {
     console.log("false");
-}
+} */
+
+let n =3
+
+function hanoi(n, a=1, b=2, c=3){
+    if(n>0){
+        hanoi(n-1, a, c, b);
+        document.write(a + "vers" + " <br/>  ");
+        hanoi(n-1, b, a, c);
+
+    }
+} 
+
+hanoi(n)
