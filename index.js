@@ -302,7 +302,7 @@ if (estPalindrome(motUtilisateur)) {
     genererMotif();
      */
 
-    let indices = [];
+    /* let indices = [];
 let tableau = ["f", "q", "x", "e", "x", "g"];
 let élément = "x";
 let idx = tableau.indexOf(élément);
@@ -311,6 +311,33 @@ while (idx != -1) {
   idx = tableau.indexOf(élément, idx + 1);
 }
 console.log(indices);
+ */
 
 
-      
+function decaleMot (mot, n) {
+
+    function decaleLettre(lettre, n) {
+    lettre = lettre.toLowerCase();
+
+    let code = lettre.charCodeAt(0);
+
+    if (code>= 97 && code <= 122) {
+        code = ((code -97 + n) % 26) + 97;
+
+    }
+    return String.fromCharCode(code);
+
+}
+
+let resultat = '';
+for (let i = 0; i<mot.length; i++) {
+    resultat += decaleLettre(mot[i], n);
+}
+return resultat;
+}
+
+let mot = window.prompt("Entrer un mot :");
+
+let n = parseInt(prompt("Entrer le nombre de décalage :"), 10);
+
+console.log("Le mot est :" + decaleMot(mot, n));
