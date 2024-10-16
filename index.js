@@ -258,15 +258,22 @@ if (estPalindrome(motUtilisateur)) {
     console.log("false");
 } */
 
-let n =3
+    let n = 3;
 
-function hanoi(n, a=1, b=2, c=3){
-    if(n>0){
-        hanoi(n-1, a, c, b);
-        document.write(a + "vers" + " <br/>  ");
-        hanoi(n-1, b, a, c);
-
+    function hanoi(n, a=1, b=2, c=3) {
+        if (n > 0) {
+            
+            hanoi(n - 1, a, c, b);
+            
+            
+            document.write("Déplacer le disque " + n + " de la tour " + a + " vers la tour " + c + "<br/>");
+            
+           
+            hanoi(n - 1, b, a, c);
+        }
     }
-} 
+    
+    hanoi(n);
+    
+    
 
-hanoi(n)
