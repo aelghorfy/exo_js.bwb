@@ -387,7 +387,7 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
   
   genererRire(n) */
 
-  function calculerFrais() {
+ /*  function calculerFrais() {
     const tarifDeBase = 0.6;
     const reduction = 0.5;
 
@@ -413,4 +413,73 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
 
   } 
 
-  calculerFrais();
+  calculerFrais(); */
+
+  function trieBulleinverse(etudiants) {
+    let n = etudiants.length;
+    let swapped;
+
+    do {
+        swapped = false;
+
+        for (let i = n - 1; i > 0; i--) {
+            if (etudiants[i].nom.toLowerCase() < etudiants[i - 1].nom.toLowerCase()) {
+                [etudiants[i], etudiants[i - 1]] = [etudiants[i - 1], etudiants[i]];
+                swapped = true;
+            }
+        }
+       
+    } while (swapped);
+
+    return etudiants;
+}
+
+function filtrerEtudiants(etudiants) {
+    let etudiantsFiltres = [];
+    let sommeNotes = 0;
+    let compteur = 0;
+
+   /*  note sup à 15 */
+    for (let i = 0; i < etudiants.length; i++) {
+        if (etudiants[i].note > 15) {
+            etudiantsFiltres.push(etudiants[i]);
+            sommeNotes += etudiants[i].note;
+            compteur++;
+        }
+    }
+
+   /*  trie orde alpha */
+    etudiantsFiltres = trieBulleinverse(etudiantsFiltres);
+
+    /* moyenne notes */
+    let moyenne = (compteur > 0) ? (sommeNotes / compteur) : 0;
+
+    /* resultats */
+    console.log("Notes supérieure à 15 :");
+    for (let i = 0; i < etudiantsFiltres.length; i++) {
+        console.log(etudiantsFiltres[i].nom + " : " + etudiantsFiltres[i].note);
+    }
+
+    console.log("Moyenne des notes : " + moyenne.toFixed(2));
+}
+
+/* liste */
+let etudiants = [
+    { nom: 'Agathe', note: 14 },
+    { nom: 'Wlad', note: 17 },
+    { nom: 'Yohann', note: 16 },
+    { nom: 'Laureline', note: 17 },
+    { nom: 'Christian', note: 12 },
+    { nom: 'Yannick', note: 19 },
+    { nom: 'Kaique', note: 17 },
+    { nom: 'Angélique', note: 18 },
+    { nom: 'Dorian', note: 15 },
+    { nom: 'emmanuel', note: 16 },
+    { nom: 'Jeremy', note: 13 },
+    { nom: 'Sylvain', note: 17 },
+    { nom: 'Yann', note: 15 },
+    { nom: 'Amin', note: 16 }
+];
+
+
+filtrerEtudiants(etudiants);
