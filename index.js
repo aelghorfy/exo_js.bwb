@@ -220,7 +220,7 @@ pyramid(n); */
 
 
       
-function trieBulleinverse(arr) {
+/* function trieBulleinverse(arr) {
     let n = arr.length;
     let swapped;
 
@@ -240,4 +240,20 @@ function trieBulleinverse(arr) {
 }
 
 let arr = [64, 34, 25, 12, 22, 11, 90];
-console.log(trieBulleinverse(arr));
+console.log(trieBulleinverse(arr)); */
+
+
+function estPalindrome(mot) {
+    mot = mot.toLowerCase()
+
+    let motInverse = mot.split('').reverse().join('');
+
+    return mot === motInverse;
+}
+
+let motUtilisateur = prompt ("Entrez un mot :")
+if (estPalindrome(motUtilisateur)) {
+    console.log("true");
+} else {
+    console.log("false");
+}
