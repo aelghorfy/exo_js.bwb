@@ -277,15 +277,11 @@ if (estPalindrome(motUtilisateur)) {
     
      */
 
-    /* function genererMotif() {
+     /* function genererMotif() {
        
         const nombreLignes = parseInt(prompt("Entrez le nombre de lignes à générer : "));
         
        
-        if (isNaN(nombreLignes) || nombreLignes <= 0) {
-            console.log("Veuillez entrer un nombre valide.");
-            return;
-        }
 
         const motif1 = "#*#*#*#*#*";
         const motif2 = "*#*#*#*#*#";
@@ -299,8 +295,8 @@ if (estPalindrome(motUtilisateur)) {
         }
     }
     
-    genererMotif();
-     */
+    genererMotif(); */
+     
 
     /* let indices = [];
 let tableau = ["f", "q", "x", "e", "x", "g"];
@@ -415,7 +411,9 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
 
   calculerFrais(); */
 
-  function trieBulleinverse(etudiants) {
+ 
+ 
+ /*  function trieBulleinverse(etudiants) {
     let n = etudiants.length;
     let swapped;
 
@@ -439,7 +437,7 @@ function filtrerEtudiants(etudiants) {
     let sommeNotes = 0;
     let compteur = 0;
 
-   /*  note sup à 15 */
+   // note sup à 15 
     for (let i = 0; i < etudiants.length; i++) {
         if (etudiants[i].note > 15) {
             etudiantsFiltres.push(etudiants[i]);
@@ -448,13 +446,13 @@ function filtrerEtudiants(etudiants) {
         }
     }
 
-   /*  trie orde alpha */
+   // trie orde alpha 
     etudiantsFiltres = trieBulleinverse(etudiantsFiltres);
 
-    /* moyenne notes */
+    // moyenne notes 
     let moyenne = (compteur > 0) ? (sommeNotes / compteur) : 0;
 
-    /* resultats */
+    // resultats 
     console.log("Notes supérieure à 15 :");
     for (let i = 0; i < etudiantsFiltres.length; i++) {
         console.log(etudiantsFiltres[i].nom + " : " + etudiantsFiltres[i].note);
@@ -463,7 +461,7 @@ function filtrerEtudiants(etudiants) {
     console.log("Moyenne des notes : " + moyenne.toFixed(2));
 }
 
-/* liste */
+// liste 
 let etudiants = [
     { nom: 'Agathe', note: 14 },
     { nom: 'Wlad', note: 17 },
@@ -483,3 +481,42 @@ let etudiants = [
 
 
 filtrerEtudiants(etudiants);
+ */
+
+
+
+
+
+function estImposable() { 
+    let civilité = window.prompt("Veuillez entrer votre civilité (homme ou femme):").toLowerCase();
+    let age = parseInt(window.prompt("Veuillez entrer votre âge:"));
+    
+    let tauxImposition;
+
+    if (civilité === 'homme') {
+        if (age > 18) {
+            tauxImposition = 0.10 * age;
+            console.log("Imposable");
+            console.log("Taux d'imposition: " + tauxImposition.toFixed(2) + "%");
+        } else {
+            console.log("Non imposable");
+        }
+        
+    } else if (civilité === 'femme') {
+        if (age >= 18) {
+            if (age < 25) {
+                tauxImposition = 0.08 * age; 
+            } else {
+                tauxImposition = 0.05 * age;
+            }
+            console.log("Imposable");
+            console.log("Taux d'imposition: " + tauxImposition.toFixed(2) + "%");
+        } else {
+            console.log("Non imposable");
+        }
+    } else {
+        console.log("Non imposable");
+    }
+}
+
+estImposable();  
