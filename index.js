@@ -258,7 +258,7 @@ if (estPalindrome(motUtilisateur)) {
     console.log("false");
 } */
 
-    let n = 3;
+    /* let n = 3;
 
     function hanoi(n, a=1, b=2, c=3) {
         if (n > 0) {
@@ -275,5 +275,30 @@ if (estPalindrome(motUtilisateur)) {
     
     hanoi(n);
     
-    
+     */
 
+    function genererMotif() {
+       
+        const nombreLignes = parseInt(prompt("Entrez le nombre de lignes à générer : "));
+        
+       
+        if (isNaN(nombreLignes) || nombreLignes <= 0) {
+            console.log("Veuillez entrer un nombre valide.");
+            return;
+        }
+        
+        const motif1 = "#*#*#*#*#*";
+        const motif2 = "*#*#*#*#*#";
+    
+        for (let i = 0; i < nombreLignes; i++) {
+            if (i % 2 === 0) {
+                console.log(motif1);
+            } else {
+                console.log(motif2);
+            }
+        }
+    }
+    
+    genererMotif();
+    
+      
