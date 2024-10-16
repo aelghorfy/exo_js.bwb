@@ -376,7 +376,7 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
   afficheEtoilesSansRepeat(); */
 
   
-  function genererRire(n){
+ /*  function genererRire(n){
   let text = "mouah";
   let text2 = "ah";
   let resultat = text2.repeat(n);
@@ -385,4 +385,32 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
 
   let n = window.prompt("Intensité du rire diabolique :");
   
-  genererRire(n)
+  genererRire(n) */
+
+  function calculerFrais() {
+    const tarifDeBase = 0.6;
+    const reduction = 0.5;
+
+    let km = parseFloat(window.prompt("Entrez le nombre de km :"));
+
+    let nbPassagers = parseInt(window.prompt("Entrez le nombre de passagers :"));
+
+    if (nbPassagers <= 0) {
+        console.log("Qui va conduire même?!");
+        return;
+    }
+
+    let montantTotal = km * tarifDeBase - (reduction * nbPassagers);
+
+    let prixParPassager = montantTotal / nbPassagers
+    
+    console.log("Montant total des frais : " + montantTotal.toFixed(2) + " €");
+    console.log("Prix par passager : " + prixParPassager.toFixed(2) + " €");
+
+    for (let i = 1; i <= nbPassagers; i++) {
+        console.log("Prix pour le passager " + i + " : " + prixParPassager.toFixed(2) + " €");
+    }
+
+  } 
+
+  calculerFrais();
