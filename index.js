@@ -342,9 +342,26 @@ let n = parseInt(prompt("Entrer le nombre de décalage :"), 10);
 
 console.log("Le mot est :" + decaleMot(mot, n)); */
 
-function afficheEtoilesSansRepeat() {
+/* function afficheEtoilesSansRepeat() {
    
     for (let i = 9; i >= 1; i--) {
+      let ligne = ""; 
+      
+     
+      for (let j = 0; j < i; j++) {
+        ligne += "* "; 
+      }
+      
+      console.log(ligne.trim());
+    }
+  }
+  
+  afficheEtoilesSansRepeat(); */
+
+
+  function afficheEtoilesSansRepeat() {
+   
+    for (let i = 1; i <= 9; i++) {
       let ligne = ""; 
       
      
