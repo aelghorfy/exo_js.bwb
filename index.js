@@ -359,7 +359,7 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
   afficheEtoilesSansRepeat(); */
 
 
-  function afficheEtoilesSansRepeat() {
+ /*  function afficheEtoilesSansRepeat() {
    
     for (let i = 1; i <= 9; i++) {
       let ligne = ""; 
@@ -373,5 +373,16 @@ console.log("Le mot est :" + decaleMot(mot, n)); */
     }
   }
   
-  afficheEtoilesSansRepeat();
+  afficheEtoilesSansRepeat(); */
+
   
+  function genererRire(n){
+  let text = "mouah";
+  let text2 = "ah";
+  let resultat = text2.repeat(n);
+  console.log(text + resultat);
+}
+
+  let n = window.prompt("Intensité du rire diabolique :");
+  
+  genererRire(n)
