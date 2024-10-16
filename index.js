@@ -2,7 +2,7 @@
 /* let monCanard ="Donald";
 const nombreDePattes=2;
 const nombreDAiles=2;
-// variable
+// letiable
 function canard(nombreDePattes,nombreDAiles){
 let maCanette="Daisy";
 let mesCanards=maCanette+=monCanard;
@@ -277,7 +277,7 @@ if (estPalindrome(motUtilisateur)) {
     
      */
 
-    function genererMotif() {
+    /* function genererMotif() {
        
         const nombreLignes = parseInt(prompt("Entrez le nombre de lignes à générer : "));
         
@@ -286,7 +286,7 @@ if (estPalindrome(motUtilisateur)) {
             console.log("Veuillez entrer un nombre valide.");
             return;
         }
-        
+
         const motif1 = "#*#*#*#*#*";
         const motif2 = "*#*#*#*#*#";
     
@@ -300,5 +300,17 @@ if (estPalindrome(motUtilisateur)) {
     }
     
     genererMotif();
-    
+     */
+
+    let indices = [];
+let tableau = ["f", "q", "x", "e", "x", "g"];
+let élément = "x";
+let idx = tableau.indexOf(élément);
+while (idx != -1) {
+  indices.push(idx);
+  idx = tableau.indexOf(élément, idx + 1);
+}
+console.log(indices);
+
+
       
