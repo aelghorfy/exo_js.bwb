@@ -74,23 +74,23 @@ console.log(stockplaque) */
 /* document.getElementById('insuranceForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    // Get the values from the form inputs
+
     let age = parseInt(document.getElementById('age').value);              
     let anneesPermis = parseInt(document.getElementById('licenceYears').value);       
     let accident = parseInt(document.getElementById('accident').value);     
     let anneesAssure = parseInt(document.getElementById('insuredYears').value);
 
-    // Call the function to calculate the insurance tariff
+
     let tarif = proposerTarifAssurance(age, anneesPermis, accident, anneesAssure);
 
-    // Display the result
+
     document.getElementById('result').textContent = 'Vous bénéficierez du ' + tarif + '!';
 });
 
 function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
     let tarif = "";
 
-    // Logic for calculating the tariff based on the inputs
+
     if (age < 25 && anneesPermis < 2) {
         tarif = "Tarif D";
     } else if (age > 25 || anneesPermis < 2) {
@@ -98,7 +98,7 @@ function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
     } else if (age >= 25 && anneesPermis >= 2) {
         tarif = "Tarif B";
     }
-//If the client have one accident, he get downgraded, if more he get refused
+
     if (accident > 1) {
         if (tarif === "Tarif D") {
             tarif = "Tarif Refusé";
@@ -115,7 +115,7 @@ function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
         tarif = "Refusé"
     }
 
-//If the client have insurence for more or equal a year, his programm get upgrated 
+
     if (anneesAssure >= 1 ) {
         if (tarif === "Tarif D") {
             tarif = "Tarif C";
@@ -127,8 +127,8 @@ function proposerTarifAssurance(age, anneesPermis, accident, anneesAssure) {
     }
 
     return tarif; 
-}
- */
+} */
+ 
 
 /* document.getElementById('PrixPhotocopie').addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -148,10 +148,10 @@ function calculate(copie, dizaine, vingtaine, audela) {
     let totalprix = 0;
     if (copie <= 10) {
         totalprix = copie * dizaine;
-    } else if (copie > 10 && copie <= 20) {
+    } else if (copie > 10 && copie <= 30) {
         totalprix = 10 * dizaine + (copie - 10) * vingtaine;
     } else if (copie > 30) {
-        totalprix = 10 * dizaine + 10 * vingtaine + (copie - 20) * audela;
+        totalprix = 10 * dizaine + 10 * vingtaine + (copie - 30) * audela;
     }
     totalprix = Math.round(totalprix*100)/100;
     return totalprix;
@@ -243,7 +243,7 @@ let arr = [64, 34, 25, 12, 22, 11, 90];
 console.log(trieBulleinverse(arr)); */
 
 
-/* function estPalindrome(mot) {
+ /* function estPalindrome(mot) {
     mot = mot.toLowerCase()
 
     let motInverse = mot.split('').reverse().join('');
@@ -256,26 +256,24 @@ if (estPalindrome(motUtilisateur)) {
     console.log("true");
 } else {
     console.log("false");
-} */
+} 
+ */
+    
+    
+    //s, d, e = source, destination, extra
+    
+    function tourDeHanoi(s, d, e, n) {
 
-    /* let n = 3;
-
-    function hanoi(n, a=1, b=2, c=3) {
-        if (n > 0) {
-            
-            hanoi(n - 1, a, c, b);
-            
-            
-            document.write("Déplacer le disque " + n + " de la tour " + a + " vers la tour " + c + "<br/>");
-            
-           
-            hanoi(n - 1, b, a, c);
+        if (n <= 0) {
+            return
         }
-    }
     
-    hanoi(n);
-    
-     */
+    tourDeHanoi(s, e, d, n - 1)
+    console.log(`Deplacer disque-${n} De ${s} vers ${d}`);
+
+    tourDeHanoi(e, d, s, n - 1);
+}
+tourDeHanoi('s', 'd', 'e', 3) 
 
      /* function genererMotif() {
        
@@ -487,7 +485,7 @@ filtrerEtudiants(etudiants);
 
 
 
-function estImposable() { 
+/* function estImposable() { 
     let civilité = window.prompt("Veuillez entrer votre civilité (homme ou femme):").toLowerCase();
     let age = parseInt(window.prompt("Veuillez entrer votre âge:"));
     
@@ -501,7 +499,7 @@ function estImposable() {
         } else {
             console.log("Non imposable");
         }
-        
+
     } else if (civilité === 'femme') {
         if (age >= 18) {
             if (age < 25) {
@@ -519,4 +517,4 @@ function estImposable() {
     }
 }
 
-estImposable();  
+estImposable(); */  
